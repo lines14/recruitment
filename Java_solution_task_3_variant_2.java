@@ -10,7 +10,7 @@ public class Java_solution_task_3_variant_2 {
         List<Object> newArr = arr.stream()
                                     .map(elem -> elem == null ? defaultValue : elem)
                                     .filter(elem -> !(elem instanceof Integer))
-                                    .map(elem -> { if (elem instanceof Double && ((Double) elem) % 1 != 0) { Double doubleElem = (Double) elem * 2; return doubleElem.intValue(); } return elem; })
+                                    .map(elem -> elem instanceof Double && ((Double) elem) % 1 != 0 ? ((Double) elem) * 2 : elem)
                                     .collect(Collectors.toList());
 
         System.out.println(newArr);
