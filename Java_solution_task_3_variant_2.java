@@ -11,6 +11,7 @@ public class Java_solution_task_3_variant_2 {
                                     .map(elem -> elem == null ? defaultValue : elem)
                                     .filter(elem -> !(elem instanceof Integer))
                                     .map(elem -> elem instanceof Double && ((Double) elem) % 1 != 0 ? ((Double) elem) * 2 : elem)
+                                    .map(elem -> elem instanceof Double ? ((Double) elem).intValue() : elem)
                                     .collect(Collectors.toList());
 
         System.out.println(newArr);
